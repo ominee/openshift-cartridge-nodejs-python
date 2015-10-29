@@ -1,0 +1,66 @@
+---
+Name: nodejs-python
+Cartridge-Short-Name: NODEJS_PYTHON
+Display-Name: Node.js + Python 3
+Description: 'Node.js + Python 3 cartridge'
+Version: '0.10-3.3'
+Versions:
+- '0.10-3.3'
+License: MIT License + The Python License, version 2.7
+License-Url: https://raw.githubusercontent.com/ominee/openshift-cartridge-nodejs-python/master/LICENSE
+Vendor: Ominee
+Website: https://github.com/ominee
+Cartridge-Version: 0.1
+Cartridge-Vendor: ominee
+Categories:
+- service
+- javascript
+- nodejs
+- python
+- web_framework
+Help-Topics:
+  Node.js: http://nodejs.org/api/
+  Python: http://www.python.org/doc/
+Provides:
+- nodejs-0.10
+- nodejs
+- python
+Scaling:
+  Min: 1
+  Max: -1
+Publishes:
+  get-doc-root:
+    Type: FILESYSTEM:doc-root
+Subscribes:
+  set-env:
+    Type: ENV:*
+    Required: false
+  set-mysql-connection-info:
+    Type: NET_TCP:db:mysql
+    Required: false
+  set-postgres-connection-info:
+    Type: NET_TCP:db:postgres
+    Required: false
+  set-doc-url:
+    Type: STRING:urlpath
+    Required: false
+Endpoints:
+- Private-IP-Name: IP
+  Private-Port-Name: PORT
+  Private-Port: 8080
+  Public-Port-Name: PROXY_PORT
+  Protocols:
+  - http
+  - ws
+  Options:
+    primary: true
+  Mappings:
+  - Frontend: ''
+    Backend: ''
+    Options:
+      websocket: true
+  - Frontend: '/health'
+    Backend: ''
+    Options:
+      health: true
+Install-Build-Required: false

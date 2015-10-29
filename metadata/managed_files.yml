@@ -1,0 +1,34 @@
+---
+locked_files:
+- bin/
+- bin/*
+- etc/
+- etc/conf/
+- etc/conf/*
+- etc/conf.d/
+- etc/conf.d/wsgi.conf
+- hooks/
+- hooks/*
+- metadata/
+- metadata/*
+- conf/
+- conf/performance.conf.erb.hidden
+- env/
+- env/OPENSHIFT_PYTHON_DIR
+- lib/
+- lib/*
+processed_templates:
+- '**/*.erb'
+- 'conf/*.erb'
+- 'env/*.erb'
+- 'etc/**/*.erb'
+- 'metadata/*.erb'
+setup_rewritten:
+- 'versions/**/*'
+dependency_dirs:
+- virtenv
+- ~/.npm
+- node_modules
+- ~/.node_modules: node_modules
+build_dependency_dirs:
+- ~/.distlib

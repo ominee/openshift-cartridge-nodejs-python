@@ -1,0 +1,15 @@
+#!/bin/bash -eu
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+source "${OPENSHIFT_NODEJS_DIR}/lib/util"
+source "${OPENSHIFT_NODEJS_DIR}/lib/nodejs_context"
+
+python_version="$1"
+curr="$2"
+next="$3"
+
+upgrade_script="${OPENSHIFT_PYTHON_DIR}usr/versions/${python_version}/bin/upgrade"
+
+if [ -e "$upgrade_script" ]; then
+    $upgrade_script "$@"
+fi
