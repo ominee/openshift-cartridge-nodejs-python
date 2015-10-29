@@ -3,14 +3,14 @@ Name: nodejs-python
 Cartridge-Short-Name: NODEJS_PYTHON
 Display-Name: Node.js + Python 3
 Description: 'Node.js + Python 3 cartridge'
-Version: '0.10-3.3'
+Version: '0.103.3'
 Versions:
-- '0.10-3.3'
+- '0.103.3'
 License: MIT License + The Python License, version 2.7
 License-Url: https://raw.githubusercontent.com/ominee/openshift-cartridge-nodejs-python/master/LICENSE
 Vendor: Ominee
 Website: https://github.com/ominee
-Cartridge-Version: 0.1
+Cartridge-Version: 0.0.1
 Cartridge-Vendor: ominee
 Categories:
 - service
